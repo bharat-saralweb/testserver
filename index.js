@@ -39,7 +39,7 @@ app.post('/locations', function(req, res, next){
 
     if(locArr instanceof Array && locArr.length > 0 && locArr[0].time != null) {
         locArr.map(function(loc) {
-            var readableTime = new Date(loc.time);
+            var readableTime = new Date(loc.time).toLocaleString();
             loc.readableTime = readableTime;
             result.push(loc);
         });
